@@ -83,8 +83,8 @@
 <div class="container main">
     <div class="row">
         <div class="col-4" >
-            <div class="card m-3 bg-light" style="height: 22em;"  >
-                <div class="card-img-top bg-dark" style="height: 11em;">Missing Photo</div>
+            <div class="card m-3 bg-light recipe-card bg-light" style="height: 22em; width: 24em;"  >
+                <div class="card-img-top" style="height: 11em;" id="missing-photo" >Missing Photo</div>
                 <div class="card-body ">
                     <div class="row recipe-header">
                         <div class="col-8">Coco Lemonade</div>
@@ -99,12 +99,18 @@
                     </div>
                 <div class="row instructions overflow-hidden">
                     <div class="col-6 ingredients-quantities">
-                        <div>Ingredient</div>
+                        <div  class="ingredient d-flex " id="ingredient ">
+                            <div id="ingredient-name">Coconut milk</div>
+                            <div class="quantity d-flex" id="quantity">
+                                <div id="quantity-value">: 400</div>
+                                <div id="quantity-units">ml</div>
+                            </div>
+                        </div>
                         <div>Ingredient</div>
                         <div>Ingredient</div>
                         <div>Ingredient</div>
                     </div>
-                    <div class="col-6 recipe-steps overflow-hidden " id="hallo">
+                    <div class="col-6 recipe-steps overflow-hidden " id="description">
                         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eos dicta eligendi dolores hic itaque, non quo laborum voluptatibus suscipit, vitae, in sint quae similique quas voluptas at animi. Optio.</div>
                     </div>
                 </div>
