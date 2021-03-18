@@ -1,3 +1,5 @@
+
+
 ::placeholder {
     color: red;
     opacity: 1; /* Firefox */
@@ -11,13 +13,15 @@
    color: red;
   }
 
-  
+ #hallo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+ }
 
-  /* .ingredients-list {
-      width: 200px;
-   
-  } */
-
-  /* .dropdown-search{
-      width: 500px;
-  } */
+ .main {
+     font-size: 14px;
+ }
