@@ -30,3 +30,24 @@ const generateIngredients = () => {
 };
 
 generateIngredients();
+
+$("#ingredient-group").on("show.bs.dropdown", function () {
+  console.log("deschis");
+  $('.ingredient-group').css("width","685px");
+  $(".ingredient-input").attr("placeholder", "Search an ingredient");
+  
+});
+
+$("#ingredient-group").on("hide.bs.dropdown", function () {
+    console.log("deschis");
+    $('.ingredient-group').css("width","200px");
+    $(".ingredient-input").attr("placeholder", "Ingredients")
+  });
+  
+//  $("#serMemtb").attr("placeholder", "Type a Location").val("").focus().blur();
+
+$(function(){
+    $(".dropdown").on("show.bs.dropdown hide.bs.dropdown", function(){
+      $(this).find(".caret").toggleClass("caretup");
+    });
+  });
