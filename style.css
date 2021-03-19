@@ -53,10 +53,16 @@
    
  }
 
- 
+ .device-group {
+    width: 200px;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-left: -2px;
+}
 
  
 
- .caretup {
+ /* .caretup {
     transform: rotate(180deg);
- }
+ } */

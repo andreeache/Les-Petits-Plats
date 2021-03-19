@@ -49,62 +49,62 @@
 
 
     <nav class="navbar container d-flex justify-content-start">
-       
-        <div class="bg-primary d-flex dropBtn ingredient-group" id="ingredient-group">
+
+        <div class="bg-primary d-flex dropBtn ingredient-group dropdown-group" id="ingredient-group">
             <li class="dropdown d-flex justify-content-between btn ingredient-group">
-                <input type="text" class="form-control bg-primary border-0 text-white tag-input ingredient-input" id="searchBar"
-                    placeholder="Ingredients" >
-                    <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="" aria-expanded="false"></button>
-            
-            <div class="dropdown-menu text-white">
-                <div class="container bg-primary text-white ingredients-list">
-                    <div class="row container" id="ingredients-dropdown">
-                       
+                <input type="text" class="form-control bg-primary border-0 text-white tag-input ingredient-input"
+                    placeholder="Ingredients">
+                <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id=""
+                    aria-expanded="false"></button>
+
+                <div class="dropdown-menu text-white">
+                    <div class="container bg-primary text-white ingredients-list">
+                        <div class="row container" id="ingredients-dropdown">
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </li>
+            </li>
         </div>
 
-        <div class="bg-success d-flex dropBtn" id="device-group" style="width: 160px; margin-right: 10px;">
-            <li class="dropdown d-flex btn">
-                <input type="text" class="form-control bg-success border-0 text-white tag-input device-input" id="searchBar"
-                placeholder="Devices" height="69px">
-                <a href="#" style="text-decoration: none" class="dropdown-toggle" data-toggle="dropdown">
-                 
-                    <span class="caret"></span>
-                   </a>
-                <ul class="dropdown-menu">
-                    <div class="row d-flex">
-                  <li>
-                      <div class="col-4">
-                    <a href="#">Menu1</a></div>
-                  </li>
-                 
-                  <li>  <div class="col-4"><a href="#">Menu2</a></div>
-                  </li>
-                 
-                  <li> <div class="col-4"><a href="#">Menu3</a></div>
-                  </li>
+        <div class="bg-success d-flex dropBtn dropdown-group" id="device-group">
+            <li class="dropdown d-flex btn justify-content-between ">
+                <input type="text" class="form-control bg-success border-0 text-white tag-input device-input" "
+                placeholder=" Devices" height="69px">
+                <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
+
+                    <!-- <span class="caret"></span> -->
+                </a>
+                <div class="dropdown-menu text-white">
+                    <div class="container bg-primary text-white devices-list">
+                        <div class="row container" id="devices-dropdown">
+
+                        </div>
+                    </div>
                 </div>
-                </ul>
-              </li>
+            </li>
         </div>
 
-        <div class="bg-success d-flex dropBtn" id="device-group">
+        <div class="bg-danger d-flex dropBtn dropdown-group" id="ustensil-group">
 
-            <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown">Ustensils <span class="caret"></span></button></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Menu1</a>
-                </li>
-                <li><a href="#">Menu2</a>
-                </li>
-                <li><a href="#">Menu3</a>
-                </li>
-              </ul>
+            <li class="dropdown d-flex btn justify-content-between ">
+                <input type="text" class="form-control bg-danger border-0 text-white tag-input ustensil-input" "
+                placeholder=" Ustensils">
+                <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
+
+                    <!-- <span class="caret"></span> -->
+                </a>
+                <div class="dropdown-menu text-white">
+                    <div class="container bg-primary text-white ustensils-list">
+                        <div class="row container" id="ustensils-dropdown">
+
+                        </div>
+                    </div>
+                </div>
+            </li>
         </div>
-    </div>
+        </div>
     </nav>
 
     <div class="container main">
