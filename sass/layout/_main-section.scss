@@ -1,7 +1,10 @@
 
 .recipe-card{
+    height: 22em; 
+    width: 24em;
     &__top{
         background-color: #C7BEBE;
+        height: 11em;
     }
     &__instructions {
         font-size: 10px;

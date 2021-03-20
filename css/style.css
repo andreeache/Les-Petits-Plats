@@ -9932,8 +9932,13 @@ body {
   font-family: "Helvetica", Sans-Serif;
 }
 
+.recipe-card {
+  height: 22em;
+  width: 24em;
+}
 .recipe-card__top {
   background-color: #C7BEBE;
+  height: 11em;
 }
 .recipe-card__instructions {
   font-size: 10px;
