@@ -1,22 +1,22 @@
-#missing-photo{
-    background-color: #C7BEBE;
-}
 
-.main {
-    font-size: 14px;
-}
-
-
-.instructions {
-    font-size: 10px;
-}
-
-
-#description {
-    overflow: hidden;
+.recipe-card{
+    &__top{
+        background-color: #C7BEBE;
+    }
+    &__instructions {
+        font-size: 10px;
+    }
+    &__steps{
+     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-line-clamp: 6; /* number of lines to show */
     -webkit-box-orient: vertical;
-    font-size: 12px;
- }
+    font-size: 13px;
+    }
+}
+
+
+
+
+

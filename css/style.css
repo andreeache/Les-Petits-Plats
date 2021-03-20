@@ -9932,26 +9932,20 @@ body {
   font-family: "Helvetica", Sans-Serif;
 }
 
-#missing-photo {
+.recipe-card__top {
   background-color: #C7BEBE;
 }
-
-.main {
-  font-size: 14px;
-}
-
-.instructions {
+.recipe-card__instructions {
   font-size: 10px;
 }
-
-#description {
+.recipe-card__steps {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 6;
   /* number of lines to show */
   -webkit-box-orient: vertical;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .filter__group {
@@ -9967,12 +9961,14 @@ body {
 .filter__group-list {
   margin-top: -25px;
   padding-top: 25px;
+  padding-bottom: 10px;
 }
 
 .dropdown-menu {
-  width: 685px;
-  height: 25em;
+  width: 684px;
+  height: auto;
   margin-top: -25px;
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
