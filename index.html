@@ -50,9 +50,9 @@
 
     <nav class="navbar container d-flex justify-content-start filter">
 
-        <div class="bg-primary d-flex dropBtn filter__group filter__group-ingredient" id="ingredient-group">
-            <li class="dropdown d-flex justify-content-between btn ">
-                <input type="text" class="form-control bg-primary border-0 filter__input filter__input-ingredient"
+        <div class="bg-primary d-flex  dropBtn filter__group filter__group-ingredient" id="ingredient-group">
+            <li class="dropdown d-flex justify-content-between btn filter__group-ingredient-dd">
+                <input type="text" class="form-control bg-primary border-0 filter__input filter__input-ingredient text-white"
                     placeholder="Ingredients">
                 <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id=""
                     aria-expanded="false"></button>
@@ -68,16 +68,16 @@
             </li>
         </div>
 
-        <div class="bg-success d-flex dropBtn filter__group" id="device-group">
-            <li class="dropdown d-flex btn justify-content-between ">
-                <input type="text" class="form-control bg-success border-0 filter__input" 
+        <div class="bg-success d-flex dropBtn filter__group filter__group-devices" id="device-group">
+            <li class="dropdown d-flex btn justify-content-between filter__group-devices-dd">
+                <input type="text" class="form-control bg-success border-0 filter__input filter__input-device text-white"
                 placeholder=" Devices" height="69px">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
 
                     <!-- <span class="caret"></span> -->
                 </a>
                 <div class="dropdown-menu text-white">
-                    <div class="container bg-primary text-white filter__group-list">
+                    <div class="container bg-success text-white filter__group-list">
                         <div class="row container" id="devices-dropdown">
 
                         </div>
@@ -86,17 +86,17 @@
             </li>
         </div>
 
-        <div class="bg-danger d-flex dropBtn filter__group" id="ustensil-group">
+        <div class="bg-danger d-flex dropBtn filter__group filter__group-ustensils" id="ustensils-group">
 
-            <li class="dropdown d-flex btn justify-content-between ">
-                <input type="text" class="form-control bg-danger border-0 filter__input"
+            <li class="dropdown d-flex btn justify-content-between filter__group-ustensils-dd">
+                <input type="text" class="form-control bg-danger border-0 filter__input filter__input-ustensils text-white" id="ustensils-group"
                 placeholder=" Ustensils">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
 
                     <!-- <span class="caret"></span> -->
                 </a>
                 <div class="dropdown-menu text-white">
-                    <div class="container bg-primary text-white filter__group-list">
+                    <div class="container bg-danger text-white filter__group-list">
                         <div class="row container" id="ustensils-dropdown">
 
                         </div>
@@ -106,6 +106,8 @@
         </div>
         </div>
     </nav>
+
+
 
     <div class="container main">
         <div class="row">
