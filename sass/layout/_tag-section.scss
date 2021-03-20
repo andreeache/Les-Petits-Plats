@@ -1,0 +1,28 @@
+.filter {
+    width: 200px;
+    &__group{
+        width: 200px;
+        border-radius: 5px;
+        padding-top: 5px;
+        margin-right: 10px;
+        margin-left: -2px;
+        
+    } 
+    &__input::placeholder{
+        color: #fff !important;
+        font: 20px important !important;
+    }
+    &__group-list{
+        margin-top: -25px;
+        padding-top: 25px;
+        margin-right: 5px;
+    }
+}
+
+
+ .dropdown-menu {
+     width: 685px;
+     height: 25em;
+     margin-top: -25px;
+ }
+

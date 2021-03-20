@@ -1,0 +1,22 @@
+#missing-photo{
+    background-color: #C7BEBE;
+}
+
+.main {
+    font-size: 14px;
+}
+
+
+.instructions {
+    font-size: 10px;
+}
+
+
+#description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+ }

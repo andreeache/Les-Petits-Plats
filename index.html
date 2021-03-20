@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css" class="ref">
+    <link rel="stylesheet" href="css/style.css" class="ref">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -33,10 +33,10 @@
         </div>
     </div>
     <div class="container filter-section">
-        <button type="button" class="btn-primary m-1 pl-2 pr-2 d-flex  justify-content-around"
+        <button type="button" class="btn-primary m-1 pl-2 pr-2 d-flex  justify-content-around filter-srction__btn"
             style="width: 6em; height: 2em" aria-label="Close">
-            <div id="ingredient-tag-name">Coco</div>
-            <div id="ingredient-tag-close">
+            <div class="filter-section__tag" id="ingredient-tag-name">Coco</div>
+            <div class="filter-section__close" id="ingredient-tag-close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-x-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -48,18 +48,18 @@
     </div>
 
 
-    <nav class="navbar container d-flex justify-content-start">
+    <nav class="navbar container d-flex justify-content-start filter">
 
-        <div class="bg-primary d-flex dropBtn ingredient-group dropdown-group" id="ingredient-group">
-            <li class="dropdown d-flex justify-content-between btn ingredient-group">
-                <input type="text" class="form-control bg-primary border-0 text-white tag-input ingredient-input"
+        <div class="bg-primary d-flex dropBtn filter__group filter__group-ingredient" id="ingredient-group">
+            <li class="dropdown d-flex justify-content-between btn ">
+                <input type="text" class="form-control bg-primary border-0 filter__input filter__input-ingredient"
                     placeholder="Ingredients">
                 <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id=""
                     aria-expanded="false"></button>
 
                 <div class="dropdown-menu text-white">
-                    <div class="container bg-primary text-white ingredients-list">
-                        <div class="row container" id="ingredients-dropdown">
+                    <div class="container bg-primary text-white filter__group-list">
+                        <div class="row container " id="ingredients-dropdown">
 
                         </div>
                     </div>
@@ -68,16 +68,16 @@
             </li>
         </div>
 
-        <div class="bg-success d-flex dropBtn dropdown-group" id="device-group">
+        <div class="bg-success d-flex dropBtn filter__group" id="device-group">
             <li class="dropdown d-flex btn justify-content-between ">
-                <input type="text" class="form-control bg-success border-0 text-white tag-input device-input" "
+                <input type="text" class="form-control bg-success border-0 filter__input" 
                 placeholder=" Devices" height="69px">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
 
                     <!-- <span class="caret"></span> -->
                 </a>
                 <div class="dropdown-menu text-white">
-                    <div class="container bg-primary text-white devices-list">
+                    <div class="container bg-primary text-white filter__group-list">
                         <div class="row container" id="devices-dropdown">
 
                         </div>
@@ -86,17 +86,17 @@
             </li>
         </div>
 
-        <div class="bg-danger d-flex dropBtn dropdown-group" id="ustensil-group">
+        <div class="bg-danger d-flex dropBtn filter__group" id="ustensil-group">
 
             <li class="dropdown d-flex btn justify-content-between ">
-                <input type="text" class="form-control bg-danger border-0 text-white tag-input ustensil-input" "
+                <input type="text" class="form-control bg-danger border-0 filter__input"
                 placeholder=" Ustensils">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
 
                     <!-- <span class="caret"></span> -->
                 </a>
                 <div class="dropdown-menu text-white">
-                    <div class="container bg-primary text-white ustensils-list">
+                    <div class="container bg-primary text-white filter__group-list">
                         <div class="row container" id="ustensils-dropdown">
 
                         </div>

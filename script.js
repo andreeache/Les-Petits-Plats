@@ -34,11 +34,11 @@ const generateUstensils = () => {
 generateUstensils();
 
 $("#ingredient-group").on("show.bs.dropdown", function () {
-  $(".ingredient-group").css("width", "685px");
-  $(".ingredient-input").attr("placeholder", "Search an ingredient");
+  $(".filter__group-ingredient").css("width", "685px");
+  $(".filter__input-ingredient").attr("placeholder", "Search an ingredient");
 });
 
 $("#ingredient-group").on("hide.bs.dropdown", function () {
-  $(".ingredient-group").css("width", "200px");
-  $(".ingredient-input").attr("placeholder", "Ingredients");
+  $(".filter__group-ingredient").css("width", "200px");
+  $(".filter__input-ingredient").attr("placeholder", "Ingredients");
 });
