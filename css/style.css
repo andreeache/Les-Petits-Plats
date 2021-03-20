@@ -9932,13 +9932,33 @@ body {
   font-family: "Helvetica", Sans-Serif;
 }
 
+.main-card {
+  width: 380px;
+  height: 364px;
+}
+
 .recipe-card {
   height: 22em;
   width: 24em;
+  margin-bottom: 40px;
 }
 .recipe-card__top {
   background-color: #C7BEBE;
-  height: 11em;
+  height: 180px;
+}
+.recipe-card__body {
+  font-size: 12px;
+  height: 200px;
+}
+.recipe-card__header {
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+.recipe-card__details {
+  overflow: hidden;
+}
+.recipe-card__ingredients-name {
+  font-size: 10px;
 }
 .recipe-card__instructions {
   font-size: 10px;
@@ -9947,10 +9967,28 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   /* number of lines to show */
   -webkit-box-orient: vertical;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.recipe-card__ingredients-name {
+  font-size: 10px;
+}
+
+#recipe-card__ingredients-name {
+  font-size: 12px;
+}
+
+#description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-size: 12px;
 }
 
 .filter__group {
