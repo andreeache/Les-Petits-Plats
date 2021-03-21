@@ -9930,44 +9930,44 @@ h3 {
 }
 body {
   font-family: "Helvetica", Sans-Serif;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
-.main-card {
-  width: 380px;
-  height: 364px;
+.main-section {
+  width: 100vw;
 }
 
 .recipe-card {
-  height: 22em;
-  width: 24em;
   margin-bottom: 40px;
 }
 .recipe-card__top {
-  background-color: #C7BEBE;
-  height: 180px;
+  background-color: #c7bebe;
+  height: 150px;
 }
 .recipe-card__body {
   font-size: 12px;
-  height: 200px;
 }
 .recipe-card__header {
   font-size: 14px;
   margin-bottom: 1em;
+  font-weight: 800;
 }
 .recipe-card__details {
   overflow: hidden;
 }
 .recipe-card__ingredients-name {
   font-size: 10px;
+  font-weight: 800;
 }
-.recipe-card__instructions {
+.recipe-card__instruction {
   font-size: 10px;
 }
 .recipe-card__steps {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   /* number of lines to show */
   -webkit-box-orient: vertical;
   font-size: 12px;
@@ -9975,20 +9975,6 @@ body {
 
 .recipe-card__ingredients-name {
   font-size: 10px;
-}
-
-#recipe-card__ingredients-name {
-  font-size: 12px;
-}
-
-#description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
-  font-size: 12px;
 }
 
 .filter__group {

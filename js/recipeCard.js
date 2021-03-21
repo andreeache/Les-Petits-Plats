@@ -73,7 +73,7 @@ export const generateRecipes = () => {
       recipeCardDetails.appendChild(ingredients);
 
       let ingredientName = document.createElement("DIV");
-      ingredientName.setAttribute("classs", "recipe-card__ingredients-name");
+      ingredientName.setAttribute("class", "recipe-card__ingredients-name");
       ingredientName.setAttribute("id", "recipe-card__ingredients-name");
       ingredientName.innerText = ingredient["ingredient"];
       ingredients.appendChild(ingredientName);
