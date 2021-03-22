@@ -32,14 +32,40 @@ export class tagFactory {
       tag.setAttribute("class", "col-4");
       this.parentDropdown.appendChild(tag);
 
-      let dropdownTag = document.createElement("A");
+      let dropdownTag = document.createElement("div");
       dropdownTag.setAttribute(
         "class",
         "text-decoration-none  text-reset ingredient-tag"
       );
-      dropdownTag.setAttribute("href", "#");
       dropdownTag.innerText = myTagSet[i];
+      dropdownTag.setAttribute("onclick", "tagClick(this)");
       tag.appendChild(dropdownTag);
     }
   }
+}
+
+export function tagClick(element) {
+  let filterSection = document.getElementById("filter-section");
+
+  let newButton = document.createElement("button");
+  newButton.setAttribute(
+    "class",
+    "btn-primary m-1 px-2 d-flex  justify-content-between filter-srction__btn"
+  );
+  newButton.setAttribute("onclick", "filterClose(this)");
+  newButton.setAttribute("aria-label", "Close");
+  let newButtonName = document.createElement("DIV");
+  newButtonName.innerText = element.innerText;
+  newButton.appendChild(newButtonName);
+
+  let newButtonIcon = document.createElement("DIV");
+  newButtonIcon.setAttribute("class", "bi bi-x-circle ml-2");
+
+  newButton.appendChild(newButtonIcon);
+
+  filterSection.appendChild(newButton);
+}
+
+export function filterClose(element) {
+  element.parentNode.removeChild(element);
 }

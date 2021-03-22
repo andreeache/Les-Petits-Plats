@@ -165,7 +165,7 @@ export const recipes = [
                "unit": "tablespoons"
            },
            {
-               "ingredient": "grated Gruyere",
+               "ingredient": "Grated Gruyere",
                "quantity": 100,
                "unit": "grams"
            },
@@ -281,7 +281,7 @@ export const recipes = [
                "unit": "grams"
            },
            {
-                "ingredient": "flour",
+                "ingredient": "Flour",
                 "quantity": 90,
                 "unit": "grams"
            }
@@ -452,7 +452,7 @@ export const recipes = [
                 "unit":"tablespoon"
             },
             {
-                "ingredient": "olive oil",
+                "ingredient": "Olive oil",
                 "quantity": 2,
                 "unit": "tablespoon"
             }
@@ -567,7 +567,7 @@ export const recipes = [
                 "unit":"vines"
             },
             {
-                "ingredient": "olive oil",
+                "ingredient": "Olive oil",
                 "quantity": 2,
                 "unit": "tablespoon"
             }
@@ -693,7 +693,7 @@ export const recipes = [
                 "unit":"grams"
             },
             {
-                "ingredient": "olive oil",
+                "ingredient": "Olive oil",
                 "quantity": 1,
                 "unit": "tablespoons"
             }
@@ -1507,7 +1507,7 @@ export const recipes = [
                 "unit":"grams"
             },
             {
-                "ingredient": "flour",
+                "ingredient": "Flour",
                 "quantity": 40,
                 "unit": "grams"
             }

@@ -9963,8 +9963,8 @@ body {
 .recipe-card__instruction {
   font-size: 10px;
 }
-.recipe-card__quantity-value {
-  margin-left: 2px;
+.recipe-card__duration-icon {
+  font-weight: 800;
 }
 .recipe-card__steps {
   overflow: hidden;

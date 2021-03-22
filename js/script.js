@@ -1,6 +1,9 @@
 import { recipes } from "./recipes.js";
-import { tagFactory } from "./tagFactory.js";
+import { tagFactory, tagClick, filterClose } from "./tagFactory.js";
 import { generateRecipes } from "./recipeCard.js";
+
+window.tagClick = tagClick;
+window.filterClose = filterClose;
 
 const ingredientFilter = document.getElementById("ingredient-filter");
 

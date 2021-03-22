@@ -6,7 +6,7 @@ export const generateRecipes = () => {
     //create recipe card
 
     let mainCard = document.createElement("DIV");
-    mainCard.setAttribute("class", "col-md-6 col-lg-4 main-card d-flex");
+    mainCard.setAttribute("class", "col-md-6 col-lg-4 main-card d-flex p-2");
     mainSection.appendChild(mainCard);
 
     let recipeCard = document.createElement("DIV");
