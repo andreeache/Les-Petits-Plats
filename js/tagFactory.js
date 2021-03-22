@@ -48,10 +48,25 @@ export function tagClick(element) {
   let filterSection = document.getElementById("filter-section");
 
   let newButton = document.createElement("button");
-  newButton.setAttribute(
-    "class",
-    "btn-primary m-1 px-2 d-flex  justify-content-between filter-srction__btn"
-  );
+  let myClass = "m-1 p-2 d-flex  justify-content-between filter-srction__btn";
+
+  if (
+    element.parentNode.parentNode.parentNode
+      .getAttribute("class")
+      .includes("bg-primary")
+  ) {
+    myClass += " btn-primary";
+  } else if (
+    element.parentNode.parentNode.parentNode
+      .getAttribute("class")
+      .includes("bg-success")
+  ) {
+    myClass += " btn-success";
+  } else {
+    myClass += " btn-danger";
+  }
+
+  newButton.setAttribute("class", myClass);
   newButton.setAttribute("onclick", "filterClose(this)");
   newButton.setAttribute("aria-label", "Close");
   let newButtonName = document.createElement("DIV");
