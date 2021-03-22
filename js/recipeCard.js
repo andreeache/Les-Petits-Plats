@@ -34,17 +34,20 @@ export const generateRecipes = () => {
     let recipeCardDuration = document.createElement("DIV");
     recipeCardDuration.setAttribute(
       "class",
-      "col-4 d-flex justify-content-around recipe-card__duration"
+      "col-4 d-flex justify-content-end recipe-card__duration"
     );
     recipeCardHeader.appendChild(recipeCardDuration);
 
-    let timerIcon = document.createElement("DIV");
-    timerIcon.setAttribute("class", "recipe-card__duration-icon");
-    timerIcon.innerHTML = "w";
+    let timerIcon = document.createElement("i");
+    timerIcon.setAttribute(
+      "class",
+      "recipe-card__duration-icon bi bi-clock font-weight-bold pr-1"
+    );
+    timerIcon.innerHTML = "";
     recipeCardDuration.appendChild(timerIcon);
 
     let recipeDuration = document.createElement("DIV");
-    recipeDuration.setAttribute("class", "recipe-card__duration-numerals");
+    recipeDuration.setAttribute("class", "recipe-card__duration-numerals pr-1");
     recipeDuration.innerText = recipe["time"];
     recipeCardDuration.appendChild(recipeDuration);
 
@@ -68,32 +71,27 @@ export const generateRecipes = () => {
 
     recipe["ingredients"].forEach((ingredient) => {
       let ingredients = document.createElement("div");
-      ingredients.setAttribute("class", "recipe-card__ingredients d-flex");
+      ingredients.setAttribute(
+        "class",
+        "recipe-card__ingredients d-flex justify-content-start "
+      );
       ingredients.setAttribute("id", "ingredient");
       recipeCardDetails.appendChild(ingredients);
 
       let ingredientName = document.createElement("DIV");
-      ingredientName.setAttribute("class", "recipe-card__ingredients-name");
+      ingredientName.setAttribute(
+        "class",
+        "recipe-card__ingredients-name overflow-hidden"
+      );
       ingredientName.setAttribute("id", "recipe-card__ingredients-name");
-      ingredientName.innerText = ingredient["ingredient"] + ": ";
+      ingredientName.innerHTML =
+        ingredient["ingredient"].bold() +
+        (ingredient["quantity"]
+          ? ": " +
+            ingredient["quantity"] +
+            (ingredient["unit"] ? " " + ingredient["unit"] : "")
+          : "");
       ingredients.appendChild(ingredientName);
-
-      let ingredientsQty = document.createElement("DIV");
-      ingredientsQty.setAttribute("class", "recipe-card__quantity d-flex");
-      ingredients.appendChild(ingredientsQty);
-
-if (ingredient["quantity"]) {
-      let quantity = document.createElement("DIV");
-      quantity.setAttribute("id", "recipe-card__quantity-value");
-      quantity.innerText =ingredient["quantity"];
-      ingredientsQty.appendChild(quantity);
-}
-      if (ingredient["unit"]) {
-        let qtyUnits = document.createElement("DIV");
-        qtyUnits.setAttribute("id", "recipe-card__quantity-units");
-        qtyUnits.innerText = ingredient["unit"];
-        ingredientsQty.appendChild(qtyUnits);
-      }
     });
 
     let recipeSteps = document.createElement("DIV");
