@@ -9934,8 +9934,8 @@ body {
   margin-left: 40px;
 }
 
-.main-section {
-  width: 100vw;
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+  max-width: 90vw;
 }
 
 .recipe-card {
@@ -9947,6 +9947,7 @@ body {
 }
 .recipe-card__body {
   font-size: 12px;
+  padding: 5px;
 }
 .recipe-card__header {
   font-size: 14px;
@@ -9962,6 +9963,9 @@ body {
 }
 .recipe-card__instruction {
   font-size: 10px;
+}
+.recipe-card__quantity-value {
+  margin-left: 2px;
 }
 .recipe-card__steps {
   overflow: hidden;

@@ -6,7 +6,7 @@ export const generateRecipes = () => {
     //create recipe card
 
     let mainCard = document.createElement("DIV");
-    mainCard.setAttribute("class", "col-md-4 main-card d-flex");
+    mainCard.setAttribute("class", "col-md-6 col-lg-4 main-card d-flex");
     mainSection.appendChild(mainCard);
 
     let recipeCard = document.createElement("DIV");
@@ -75,18 +75,19 @@ export const generateRecipes = () => {
       let ingredientName = document.createElement("DIV");
       ingredientName.setAttribute("class", "recipe-card__ingredients-name");
       ingredientName.setAttribute("id", "recipe-card__ingredients-name");
-      ingredientName.innerText = ingredient["ingredient"];
+      ingredientName.innerText = ingredient["ingredient"] + ": ";
       ingredients.appendChild(ingredientName);
 
       let ingredientsQty = document.createElement("DIV");
       ingredientsQty.setAttribute("class", "recipe-card__quantity d-flex");
       ingredients.appendChild(ingredientsQty);
 
+if (ingredient["quantity"]) {
       let quantity = document.createElement("DIV");
       quantity.setAttribute("id", "recipe-card__quantity-value");
-      quantity.innerText = ingredient["quantity"];
+      quantity.innerText =ingredient["quantity"];
       ingredientsQty.appendChild(quantity);
-
+}
       if (ingredient["unit"]) {
         let qtyUnits = document.createElement("DIV");
         qtyUnits.setAttribute("id", "recipe-card__quantity-units");

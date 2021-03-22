@@ -1,6 +1,12 @@
-.main-section {
-  width: 100vw;
-}
+
+// .main {
+//     margin-right: 10vw;
+//   padding-left: 10vw;
+// }
+
+// .main-section {
+//   width: 100vw;
+// }
 
 .recipe-card {
   margin-bottom: 40px;
@@ -10,6 +16,7 @@
   }
   &__body {
     font-size: 12px;
+    padding: 5px;
     
   }
   &__header {
@@ -26,6 +33,9 @@
   }
   &__instruction {
     font-size: 10px;
+  }
+  &__quantity-value{
+margin-left: 2px;
   }
   &__steps {
     overflow: hidden;
