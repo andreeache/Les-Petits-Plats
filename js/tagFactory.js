@@ -29,13 +29,13 @@ export class tagFactory {
 
     for (let i = 0; i < myTagSet.length; i++) {
       let tag = document.createElement("DIV");
-      tag.setAttribute("class", "col-4");
+      tag.setAttribute("class", "col-md-4");
       this.parentDropdown.appendChild(tag);
 
       let dropdownTag = document.createElement("div");
       dropdownTag.setAttribute(
         "class",
-        "text-decoration-none  text-reset ingredient-tag"
+        "text-decoration-none  text-reset ingredient-tag text-capitalize"
       );
       dropdownTag.innerText = myTagSet[i];
       dropdownTag.setAttribute("onclick", "tagClick(this)");
@@ -48,7 +48,7 @@ export function tagClick(element) {
   let filterSection = document.getElementById("filter-section");
 
   let newButton = document.createElement("button");
-  let myClass = "m-1 p-2 d-flex  justify-content-between filter-srction__btn";
+  let myClass = "m-1 px-2  py-1 d-flex  justify-content-between filter-srction__btn rounded";
 
   if (
     element.parentNode.parentNode.parentNode
@@ -75,7 +75,6 @@ export function tagClick(element) {
 
   let newButtonIcon = document.createElement("DIV");
   newButtonIcon.setAttribute("class", "bi bi-x-circle ml-2");
-
   newButton.appendChild(newButtonIcon);
 
   filterSection.appendChild(newButton);
