@@ -1,4 +1,5 @@
 import { recipes } from "./recipes.js";
+import { searchingArray, searchable } from "./tagFactory.js";
 
 export const generateRecipes = () => {
   const mainSection = document.getElementById("main-section");
@@ -10,7 +11,7 @@ export const generateRecipes = () => {
     mainSection.appendChild(mainCard);
 
     let recipeCard = document.createElement("DIV");
-    recipeCard.setAttribute("class", "card m-3 bg-light recipe-card bg-light");
+    recipeCard.setAttribute("class", "card m-2 bg-light recipe-card bg-light");
     mainCard.appendChild(recipeCard);
 
     let recipeCardTop = document.createElement("DIV");
@@ -30,6 +31,8 @@ export const generateRecipes = () => {
     recipeCardTitle.setAttribute("class", "col-8 recipe-card__title");
     recipeCardTitle.innerText = recipe["name"];
     recipeCardHeader.appendChild(recipeCardTitle);
+
+    let mySearchText = recipe["name"];
 
     let recipeCardDuration = document.createElement("DIV");
     recipeCardDuration.setAttribute(
@@ -92,6 +95,7 @@ export const generateRecipes = () => {
             (ingredient["unit"] ? " " + ingredient["unit"] : "")
           : "");
       ingredients.appendChild(ingredientName);
+      mySearchText += ingredient["ingredient"];
     });
 
     let recipeSteps = document.createElement("DIV");
@@ -102,5 +106,7 @@ export const generateRecipes = () => {
     recipeSteps.setAttribute("id", "description");
     recipeSteps.innerText = recipe["description"];
     recipeInstructions.appendChild(recipeSteps);
+    mySearchText += recipe["description"];
+    searchingArray.push(new searchable(mainCard, mySearchText.toLowerCase()));
   });
 };

@@ -40,6 +40,7 @@ export class tagFactory {
       dropdownTag.innerText = myTagSet[i];
       dropdownTag.setAttribute("onclick", "tagClick(this)");
       tag.appendChild(dropdownTag);
+      searchingArray.push(new searchable(tag, myTagSet[i].toLowerCase()));
     }
   }
 }
@@ -48,7 +49,8 @@ export function tagClick(element) {
   let filterSection = document.getElementById("filter-section");
 
   let newButton = document.createElement("button");
-  let myClass = "m-1 px-2  py-1 d-flex  justify-content-between filter-srction__btn rounded";
+  let myClass =
+    "m-1 px-2  py-1 d-flex  justify-content-between filter-srction__btn rounded";
 
   if (
     element.parentNode.parentNode.parentNode
@@ -82,4 +84,15 @@ export function tagClick(element) {
 
 export function filterClose(element) {
   element.parentNode.removeChild(element);
+}
+
+export let searchingArray = [];
+
+export class searchable {
+  element;
+  text;
+  constructor(element, text) {
+    this.element = element;
+    this.text = text;
+  }
 }
