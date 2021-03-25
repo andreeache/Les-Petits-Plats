@@ -9970,7 +9970,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 6;
   /* number of lines to show */
   -webkit-box-orient: vertical;
   font-size: 12px;
@@ -9978,6 +9978,11 @@ body {
 
 .recipe-card__ingredients-name {
   font-size: 10px;
+}
+
+.alert-message {
+  margin-top: 50px;
+  display: none !important;
 }
 
 .filter__group {

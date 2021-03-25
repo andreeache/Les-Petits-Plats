@@ -92,24 +92,14 @@ $(function () {
   });
 });
 
-generateRecipes();
+generateRecipes("", []);
 
 const searchChanged = (s) => {
   if (s.value.length < 3) {
-    searchingArray.forEach((e) => {
-      e.element.style.display = "block";
-    });
-    return;
+    generateRecipes("", []);
+  } else {
+    generateRecipes(s.value.toLowerCase(), []);
   }
-  const searchText = s.value.toLowerCase();
-  searchingArray.forEach((e) => {
-    if (e.text.includes(searchText)) {
-      e.element.style.display = "block";
-    } else {
-      e.element.style.setProperty("display" , "none", "important");
-      
-    }
-  });
 };
 
 window.searchChanged = searchChanged;

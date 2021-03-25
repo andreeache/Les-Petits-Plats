@@ -1,10 +1,48 @@
 import { recipes } from "./recipes.js";
 import { searchingArray, searchable } from "./tagFactory.js";
 
-export const generateRecipes = () => {
+export const generateRecipes = (searchFilter, tags) => {
   const mainSection = document.getElementById("main-section");
-  recipes.forEach((recipe) => {
+  mainSection.textContent = "";
+
+  for (let i = 0; i < recipes.length; i++) {
     //create recipe card
+    const recipe = recipes[i];
+    let display = false;
+
+    if (
+      recipe["name"].toLowerCase().includes(searchFilter) ||
+      recipe["description"].toLowerCase().includes(searchFilter)
+    ) {
+      display = true;
+    }
+
+    recipe["ingredients"].forEach((ingredient) => {
+      if (ingredient["ingredient"].toLowerCase().includes(searchFilter)) {
+        display = true;
+      }
+    });
+
+    if (!display && tags.length > 0) {
+      tags.forEach((tag) => {
+        if (!recipe["appliance"].toLowerCase().includes(tag)) {
+          display = true;
+        }
+      });
+    }
+
+    if (!display && tags.length > 0) {
+      recipe["ustensils"].forEach((ustensil) => {
+        tags.forEach((tag) => {
+          if (ustensil["ustensils"].toLowerCase().includes(tag)) {
+            display = true;
+          }
+        });
+      });
+    }
+    if (!display) {
+      continue;
+    }
 
     let mainCard = document.createElement("DIV");
     mainCard.setAttribute("class", "col-md-6 col-lg-4 main-card d-flex p-2");
@@ -108,5 +146,5 @@ export const generateRecipes = () => {
     recipeInstructions.appendChild(recipeSteps);
     mySearchText += recipe["description"];
     searchingArray.push(new searchable(mainCard, mySearchText.toLowerCase()));
-  });
+  }
 };

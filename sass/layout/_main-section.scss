@@ -41,7 +41,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-line-clamp: 6; /* number of lines to show */
     -webkit-box-orient: vertical;
     font-size: 12px;
    
@@ -52,3 +52,7 @@
   font-size: 10px;
 }
 
+.alert-message {
+   margin-top: 50px;
+   display: none !important;
+}
