@@ -1,8 +1,21 @@
 import { recipes } from "./recipes.js";
-import { searchingArray, searchable } from "./tagFactory.js";
+import { searchingArray, searchable, tagFactory } from "./tagFactory.js";
 
 export const generateRecipes = (searchFilter, tags) => {
   const mainSection = document.getElementById("main-section");
+  const ingredientsDropdown = document.getElementById("ingredients-dropdown");
+  const devicesDropdown = document.getElementById("devices-dropdown");
+  const ustensilsDropdown = document.getElementById("ustensils-dropdown");
+
+  let ingredientsFactory = new tagFactory(
+    ingredientsDropdown,
+    "ingredients",
+    "ingredient"
+  );
+
+  let applianceFactory = new tagFactory(devicesDropdown, "appliance", null);
+  let ustensilsFactory = new tagFactory(ustensilsDropdown, "ustensils", "");
+
   mainSection.textContent = "";
 
   for (let i = 0; i < recipes.length; i++) {
@@ -146,5 +159,11 @@ export const generateRecipes = (searchFilter, tags) => {
     recipeInstructions.appendChild(recipeSteps);
     mySearchText += recipe["description"];
     searchingArray.push(new searchable(mainCard, mySearchText.toLowerCase()));
+
+    ingredientsFactory.generate(recipe);
+
+    applianceFactory.generate(recipe);
+
+    ustensilsFactory.generate(recipe);
   }
 };

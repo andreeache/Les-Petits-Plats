@@ -13,36 +13,6 @@ window.filterClose = filterClose;
 
 const ingredientFilter = document.getElementById("ingredient-filter");
 
-const generateIngredients = () => {
-  const ingredientsDropdown = document.getElementById("ingredients-dropdown");
-
-  let t = new tagFactory(
-    ingredientsDropdown,
-    recipes,
-    "ingredients",
-    "ingredient"
-  );
-  t.generate();
-};
-
-generateIngredients();
-
-const generateDevices = () => {
-  const devicesDropdown = document.getElementById("devices-dropdown");
-  let t = new tagFactory(devicesDropdown, recipes, "appliance", null);
-  t.generate();
-};
-
-generateDevices();
-
-const generateUstensils = () => {
-  const devicesDropdown = document.getElementById("ustensils-dropdown");
-  let t = new tagFactory(devicesDropdown, recipes, "ustensils", "");
-  t.generate();
-};
-
-generateUstensils();
-
 $("#ingredient-group").on("show.bs.dropdown", function () {
   $(".filter__group-ingredient").css("width", "50vw");
   $(".filter__group-ingredient-dd").css("width", "50vw");
