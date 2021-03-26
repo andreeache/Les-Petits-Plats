@@ -56,11 +56,11 @@ $("#ustensils-group").on("hide.bs.dropdown", function () {
   $(".filter__input-ustensils").attr("placeholder", "Ustensils");
 });
 
-$(function () {
-  $(".dropdown").on("show.bs.dropdown hide.bs.dropdown", function () {
-    $(this).find(".caret").toggleClass("caretup");
-  });
-});
+// $(function () {
+//   $(".dropdown").on("show.bs.dropdown hide.bs.dropdown", function () {
+//     $(this).find(".caret").toggleClass("caretup");
+//   });
+// });
 
 generateRecipes("", []);
 

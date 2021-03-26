@@ -9,22 +9,25 @@ export class tagFactory {
     this.secondTag = secondTag;
 
     this.parentDropdown.textContent = "";
+    this.myTags = [];
   }
 
-  generate(parentItem) {
-    let myTags = [];
+  addTags(recipe) {
     if (this.secondTag != null) {
-      parentItem[this.firstTag].forEach((subitem) => {
+      recipe[this.firstTag].forEach((subitem) => {
         if (this.secondTag != "") {
-          myTags.push(subitem[this.secondTag]);
+          this.myTags.push(subitem[this.secondTag]);
         } else {
-          myTags.push(subitem);
+          this.myTags.push(subitem);
         }
       });
     } else {
-      myTags.push(parentItem[this.firstTag]);
+      this.myTags.push(recipe[this.firstTag]);
     }
-    let myTagSet = [...new Set(myTags)].sort();
+  }
+
+  generate() {
+    let myTagSet = [...new Set(this.myTags)].sort();
 
     for (let i = 0; i < myTagSet.length; i++) {
       let tag = document.createElement("DIV");

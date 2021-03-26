@@ -160,10 +160,11 @@ export const generateRecipes = (searchFilter, tags) => {
     mySearchText += recipe["description"];
     searchingArray.push(new searchable(mainCard, mySearchText.toLowerCase()));
 
-    ingredientsFactory.generate(recipe);
-
-    applianceFactory.generate(recipe);
-
-    ustensilsFactory.generate(recipe);
+    ingredientsFactory.addTags(recipe);
+    applianceFactory.addTags(recipe);
+    ustensilsFactory.addTags(recipe);
   }
+  ingredientsFactory.generate();
+  applianceFactory.generate();
+  ustensilsFactory.generate();
 };
