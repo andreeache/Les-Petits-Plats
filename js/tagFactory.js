@@ -1,3 +1,5 @@
+import { generateRecipes } from "./recipeCard.js";
+
 export class tagFactory {
   constructor(parentDropdown, firstTag, secondTag) {
     this.parentDropdown = parentDropdown;
@@ -47,6 +49,8 @@ export class tagFactory {
   }
 }
 
+export let currentTags = [];
+
 export function tagClick(element) {
   let filterSection = document.getElementById("filter-section");
 
@@ -82,10 +86,22 @@ export function tagClick(element) {
   newButton.appendChild(newButtonIcon);
 
   filterSection.appendChild(newButton);
+
+  // regenerate all the elements
+  currentTags.push(newButtonName.innerText.toLowerCase());
+  const s = document.getElementById("searchBar");
+  generateRecipes(s.value.toLowerCase(), currentTags);
 }
 
 export function filterClose(element) {
+  currentTags = currentTags.filter((value, index, array) => {
+    // it also contains the (X) at the end of the innerText
+    return value != element.innerText.toLowerCase().slice(0, -1);
+  });
   element.parentNode.removeChild(element);
+
+  const s = document.getElementById("searchBar");
+  generateRecipes(s.value.toLowerCase(), currentTags);
 }
 
 export let searchingArray = [];

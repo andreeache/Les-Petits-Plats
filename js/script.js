@@ -1,5 +1,6 @@
 import { recipes } from "./recipes.js";
 import {
+  currentTags,
   tagFactory,
   tagClick,
   filterClose,
@@ -66,9 +67,9 @@ generateRecipes("", []);
 
 const searchChanged = (s) => {
   if (s.value.length < 3) {
-    generateRecipes("", []);
+    generateRecipes("", currentTags);
   } else {
-    generateRecipes(s.value.toLowerCase(), []);
+    generateRecipes(s.value.toLowerCase(), currentTags);
   }
 };
 

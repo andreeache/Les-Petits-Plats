@@ -36,22 +36,31 @@ export const generateRecipes = (searchFilter, tags) => {
       }
     });
 
-    if (!display && tags.length > 0) {
-      tags.forEach((tag) => {
-        if (!recipe["appliance"].toLowerCase().includes(tag)) {
+    if (!display) {
+      continue;
+    }
+
+    for (let t = 0; t < tags.length; t++) {
+      let tag = tags[t];
+      display = false;
+
+      recipe["ingredients"].forEach((ingredient) => {
+        if (ingredient["ingredient"].toLowerCase().includes(tag)) {
           display = true;
         }
       });
-    }
 
-    if (!display && tags.length > 0) {
+      if (recipe["appliance"].toLowerCase().includes(tag)) {
+        display = true;
+      }
       recipe["ustensils"].forEach((ustensil) => {
-        tags.forEach((tag) => {
-          if (ustensil["ustensils"].toLowerCase().includes(tag)) {
-            display = true;
-          }
-        });
+        if (ustensil.toLowerCase().includes(tag)) {
+          display = true;
+        }
       });
+      if (!display) {
+        break;
+      }
     }
     if (!display) {
       continue;
