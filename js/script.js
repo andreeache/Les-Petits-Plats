@@ -74,3 +74,18 @@ const searchChanged = (s) => {
 };
 
 window.searchChanged = searchChanged;
+
+const tagChanged = (s) => {
+  let tags = s.parentNode.getElementsByClassName("col-md-4");
+  let toFind = s.value.toLowerCase();
+  for (let i = 0; i < tags.length; i++) {
+    let e = tags[i];
+    if (e.innerText.toLowerCase().includes(toFind)) {
+      e.style.display = "block";
+    } else {
+      e.style.display = "none";
+    }
+  }
+};
+
+window.tagChanged = tagChanged;

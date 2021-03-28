@@ -40,10 +40,10 @@
 
     <nav class="navbar container-fluid d-flex justify-content-start filter">
 
-        <div class="bg-primary d-flex  dropBtn filter__group filter__group-ingredient" id="ingredient-group">
+        <div class="bg-primary d-flex  dropBtn filter__group filter__group-ingredient" id="ingredient-group" >
             <li class="dropdown  d-flex justify-content-between btn filter__group-ingredient-dd ">
                 <input type="text"
-                    class="form-control bg-primary border-0 filter__input filter__input-ingredient text-white"
+                    class="form-control bg-primary border-0 filter__input filter__input-ingredient text-white" onkeyup="tagChanged(this)"
                     placeholder="Ingredients">
                 <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id=""
                     aria-expanded="false"></button>
@@ -61,7 +61,7 @@
 
         <div class="bg-success d-flex dropBtn filter__group filter__group-devices" id="device-group">
             <li class="dropdown d-flex btn justify-content-between filter__group-devices-dd">
-                <input type="text"
+                <input type="text" onkeyup="tagChanged(this)"
                     class="form-control bg-success border-0 filter__input filter__input-device text-white"
                     placeholder=" Devices" height="69px">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
@@ -81,7 +81,7 @@
         <div class="bg-danger d-flex dropBtn filter__group filter__group-ustensils" id="ustensils-group">
 
             <li class="dropdown d-flex btn justify-content-between filter__group-ustensils-dd">
-                <input type="text"
+                <input type="text" onkeyup="tagChanged(this)"
                     class="form-control bg-danger border-0 filter__input filter__input-ustensils text-white"
                     id="ustensils-group" placeholder=" Ustensils">
                 <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
