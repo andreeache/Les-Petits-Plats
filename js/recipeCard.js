@@ -7,6 +7,8 @@ export const generateRecipes = (searchFilter, tags) => {
   const devicesDropdown = document.getElementById("devices-dropdown");
   const ustensilsDropdown = document.getElementById("ustensils-dropdown");
 
+  let alert = true;
+
   let ingredientsFactory = new tagFactory(
     ingredientsDropdown,
     "ingredients",
@@ -172,8 +174,17 @@ export const generateRecipes = (searchFilter, tags) => {
     ingredientsFactory.addTags(recipe);
     applianceFactory.addTags(recipe);
     ustensilsFactory.addTags(recipe);
+
+    alert = false;
   }
   ingredientsFactory.generate();
   applianceFactory.generate();
   ustensilsFactory.generate();
+
+  const alertMessage = document.getElementById("alert-message");
+  if (alert == true) {
+    alertMessage.style.setProperty("display", "block", "important");
+  } else {
+    alertMessage.style.setProperty("display", "none", "important");
+  }
 };

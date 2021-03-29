@@ -14,6 +14,7 @@ window.filterClose = filterClose;
 
 const ingredientFilter = document.getElementById("ingredient-filter");
 
+
 $("#ingredient-group").on("show.bs.dropdown", function () {
   $(".filter__group-ingredient").css("width", "50vw");
   $(".filter__group-ingredient-dd").css("width", "50vw");

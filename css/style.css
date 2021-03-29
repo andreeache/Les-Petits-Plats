@@ -9980,7 +9980,7 @@ body {
   font-size: 10px;
 }
 
-.alert-message {
+#alert-message {
   margin-top: 50px;
   display: none !important;
 }
