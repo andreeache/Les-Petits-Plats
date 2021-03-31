@@ -10,38 +10,39 @@ export const generateRecipes = (searchFilter, tags) => {
   const ustensilsDropdown = document.getElementById("ustensils-dropdown");
 
   let alert = true;
+  // true if the map is already generated
+  const tagMapGenerated = tagMap.size > 0;
 
   let ingredientsFactory = new tagFactory(
     ingredientsDropdown,
     "ingredients",
     "ingredient",
-    tagMap
+    // if the tagMap is generated then call it with null,
+    // otherwise call it with the map in order to be generated
+    tagMapGenerated ? null : tagMap
   );
 
   let applianceFactory = new tagFactory(
     devicesDropdown,
     "appliance",
     null,
-    tagMap
+    tagMapGenerated ? null : tagMap
   );
   let ustensilsFactory = new tagFactory(
     ustensilsDropdown,
     "ustensils",
     "",
-    tagMap
+    tagMapGenerated ? null : tagMap
   );
 
   mainSection.textContent = "";
 
   let myRecipes = recipes;
-  if ((tags.length > 0) && (tagMap.size > 0)) {
+  if (tags.length > 0) {
     myRecipes = [];
 
     for (let t = 0; t < tags.length; t++) {
-      if (tagMap.has(tags[t]) == false) {
-        console.log("Exception: tag key doesn't exist");
-      }
-
+      // an array with all the recipes that are matching this tag
       let recipesWithTag = tagMap.get(tags[t]);
       if (myRecipes.length == 0) {
         myRecipes = recipesWithTag;
@@ -52,8 +53,6 @@ export const generateRecipes = (searchFilter, tags) => {
       }
     }
   }
-
-  tagMap.clear();
 
   for (let i = 0; i < myRecipes.length; i++) {
     //create recipe card

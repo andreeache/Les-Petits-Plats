@@ -1,4 +1,4 @@
-import { generateRecipes, tagMap } from "./recipeCard.js";
+import { generateRecipes } from "./recipeCard.js";
 
 export class tagFactory {
   constructor(parentDropdown, firstTag, secondTag, mapOfTags) {
@@ -20,15 +20,17 @@ export class tagFactory {
   addTag(recipe, tag) {
     this.myTags.push(tag);
 
-    const myKey = tag.toLowerCase();
-    if (!this.tagMap.has(myKey)) {
-      // first recipe to contain this tag
-      this.tagMap.set(myKey, [recipe]);
-    } else {
-      // multiple recipes with this tag, just append it
-      let value = this.tagMap.get(myKey);
-      value.push(recipe);
-      this.tagMap.set(myKey, value);
+    if (this.tagMap) {
+      const myKey = tag.toLowerCase();
+      if (!this.tagMap.has(myKey)) {
+        // first recipe to contain this tag
+        this.tagMap.set(myKey, [recipe]);
+      } else {
+        // multiple recipes with this tag, just append it
+        let value = this.tagMap.get(myKey);
+        value.push(recipe);
+        this.tagMap.set(myKey, value);
+      }
     }
   }
 
@@ -119,7 +121,6 @@ export function filterClose(element) {
   element.parentNode.removeChild(element);
 
   const s = document.getElementById("searchBar");
-  tagMap.clear();
   generateRecipes(s.value.toLowerCase(), currentTags);
 }
 
