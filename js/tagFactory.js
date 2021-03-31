@@ -1,7 +1,7 @@
-import { generateRecipes } from "./recipeCard.js";
+import { generateRecipes, tagMap } from "./recipeCard.js";
 
 export class tagFactory {
-  constructor(parentDropdown, firstTag, secondTag) {
+  constructor(parentDropdown, firstTag, secondTag, mapOfTags) {
     this.parentDropdown = parentDropdown;
     this.firstTag = firstTag;
     //second tag
@@ -12,19 +12,37 @@ export class tagFactory {
 
     this.parentDropdown.textContent = "";
     this.myTags = [];
+
+    // the map of tags used to quickly get all the matching recipes for a certain tag
+    this.tagMap = mapOfTags;
+  }
+
+  addTag(recipe, tag) {
+    this.myTags.push(tag);
+
+    const myKey = tag.toLowerCase();
+    if (!this.tagMap.has(myKey)) {
+      // first recipe to contain this tag
+      this.tagMap.set(myKey, [recipe]);
+    } else {
+      // multiple recipes with this tag, just append it
+      let value = this.tagMap.get(myKey);
+      value.push(recipe);
+      this.tagMap.set(myKey, value);
+    }
   }
 
   addTags(recipe) {
     if (this.secondTag != null) {
       recipe[this.firstTag].forEach((subitem) => {
         if (this.secondTag != "") {
-          this.myTags.push(subitem[this.secondTag]);
+          this.addTag(recipe, subitem[this.secondTag]);
         } else {
-          this.myTags.push(subitem);
+          this.addTag(recipe, subitem);
         }
       });
     } else {
-      this.myTags.push(recipe[this.firstTag]);
+      this.addTag(recipe, recipe[this.firstTag]);
     }
   }
 
@@ -101,6 +119,7 @@ export function filterClose(element) {
   element.parentNode.removeChild(element);
 
   const s = document.getElementById("searchBar");
+  tagMap.clear();
   generateRecipes(s.value.toLowerCase(), currentTags);
 }
 

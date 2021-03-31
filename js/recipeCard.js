@@ -1,6 +1,8 @@
 import { recipes } from "./recipes.js";
 import { searchingArray, searchable, tagFactory } from "./tagFactory.js";
 
+export const tagMap = new Map();
+
 export const generateRecipes = (searchFilter, tags) => {
   const mainSection = document.getElementById("main-section");
   const ingredientsDropdown = document.getElementById("ingredients-dropdown");
@@ -12,17 +14,50 @@ export const generateRecipes = (searchFilter, tags) => {
   let ingredientsFactory = new tagFactory(
     ingredientsDropdown,
     "ingredients",
-    "ingredient"
+    "ingredient",
+    tagMap
   );
 
-  let applianceFactory = new tagFactory(devicesDropdown, "appliance", null);
-  let ustensilsFactory = new tagFactory(ustensilsDropdown, "ustensils", "");
+  let applianceFactory = new tagFactory(
+    devicesDropdown,
+    "appliance",
+    null,
+    tagMap
+  );
+  let ustensilsFactory = new tagFactory(
+    ustensilsDropdown,
+    "ustensils",
+    "",
+    tagMap
+  );
 
   mainSection.textContent = "";
 
-  for (let i = 0; i < recipes.length; i++) {
+  let myRecipes = recipes;
+  if ((tags.length > 0) && (tagMap.size > 0)) {
+    myRecipes = [];
+
+    for (let t = 0; t < tags.length; t++) {
+      if (tagMap.has(tags[t]) == false) {
+        console.log("Exception: tag key doesn't exist");
+      }
+
+      let recipesWithTag = tagMap.get(tags[t]);
+      if (myRecipes.length == 0) {
+        myRecipes = recipesWithTag;
+      } else {
+        myRecipes = myRecipes.filter((aRecipe) =>
+          recipesWithTag.includes(aRecipe)
+        );
+      }
+    }
+  }
+
+  tagMap.clear();
+
+  for (let i = 0; i < myRecipes.length; i++) {
     //create recipe card
-    const recipe = recipes[i];
+    const recipe = myRecipes[i];
     let display = false;
 
     if (
@@ -38,32 +73,6 @@ export const generateRecipes = (searchFilter, tags) => {
       }
     });
 
-    if (!display) {
-      continue;
-    }
-
-    for (let t = 0; t < tags.length; t++) {
-      let tag = tags[t];
-      display = false;
-
-      recipe["ingredients"].forEach((ingredient) => {
-        if (ingredient["ingredient"].toLowerCase().includes(tag)) {
-          display = true;
-        }
-      });
-
-      if (recipe["appliance"].toLowerCase().includes(tag)) {
-        display = true;
-      }
-      recipe["ustensils"].forEach((ustensil) => {
-        if (ustensil.toLowerCase().includes(tag)) {
-          display = true;
-        }
-      });
-      if (!display) {
-        break;
-      }
-    }
     if (!display) {
       continue;
     }
