@@ -8,12 +8,12 @@ import {
   searchable,
 } from "./tagFactory.js";
 import { generateRecipes } from "./recipeCard.js";
+import { filterInput, filterTags } from "./search.js";
 
 window.tagClick = tagClick;
 window.filterClose = filterClose;
 
 const ingredientFilter = document.getElementById("ingredient-filter");
-
 
 $("#ingredient-group").on("show.bs.dropdown", function () {
   $(".filter__group-ingredient").css("width", "50vw");
@@ -64,13 +64,19 @@ $("#ustensils-group").on("hide.bs.dropdown", function () {
 //   });
 // });
 
-generateRecipes("", []);
+generateRecipes(recipes, []);
 
 const searchChanged = (s) => {
   if (s.value.length < 3) {
-    generateRecipes("", currentTags);
+    generateRecipes(recipes);
   } else {
-    generateRecipes(s.value.toLowerCase(), currentTags);
+    const myRecipes = filterInput(recipes, s.value);
+    if (currentTags.length > 0) {
+      const myTagsFilteredRecipes = filterTags(myRecipes, currentTags);
+      generateRecipes(myTagsFilteredRecipes);
+    } else {
+      generateRecipes(myRecipes);
+    }
   }
 };
 

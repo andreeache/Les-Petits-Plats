@@ -1,7 +1,7 @@
 import { recipes } from "./recipes.js";
 import { searchingArray, searchable, tagFactory } from "./tagFactory.js";
 
-export const generateRecipes = (searchFilter, tags) => {
+export const generateRecipes = (recipeList) => {
   const mainSection = document.getElementById("main-section");
   const ingredientsDropdown = document.getElementById("ingredients-dropdown");
   const devicesDropdown = document.getElementById("devices-dropdown");
@@ -20,53 +20,8 @@ export const generateRecipes = (searchFilter, tags) => {
 
   mainSection.textContent = "";
 
-  for (let i = 0; i < recipes.length; i++) {
-    //create recipe card
-    const recipe = recipes[i];
-    let display = false;
-
-    if (
-      recipe["name"].toLowerCase().includes(searchFilter) ||
-      recipe["description"].toLowerCase().includes(searchFilter)
-    ) {
-      display = true;
-    }
-
-    recipe["ingredients"].forEach((ingredient) => {
-      if (ingredient["ingredient"].toLowerCase().includes(searchFilter)) {
-        display = true;
-      }
-    });
-
-    if (!display) {
-      continue;
-    }
-
-    for (let t = 0; t < tags.length; t++) {
-      let tag = tags[t];
-      display = false;
-
-      recipe["ingredients"].forEach((ingredient) => {
-        if (ingredient["ingredient"].toLowerCase().includes(tag)) {
-          display = true;
-        }
-      });
-
-      if (recipe["appliance"].toLowerCase().includes(tag)) {
-        display = true;
-      }
-      recipe["ustensils"].forEach((ustensil) => {
-        if (ustensil.toLowerCase().includes(tag)) {
-          display = true;
-        }
-      });
-      if (!display) {
-        break;
-      }
-    }
-    if (!display) {
-      continue;
-    }
+  for (let i = 0; i < recipeList.length; i++) {
+    const recipe = recipeList[i];
 
     let mainCard = document.createElement("DIV");
     mainCard.setAttribute("class", "col-md-6 col-lg-4 main-card d-flex p-2");

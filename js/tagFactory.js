@@ -1,4 +1,6 @@
 import { generateRecipes } from "./recipeCard.js";
+import { filterInput, filterTags } from "./search.js";
+import { recipes } from "./recipes.js";
 
 export class tagFactory {
   constructor(parentDropdown, firstTag, secondTag) {
@@ -90,7 +92,9 @@ export function tagClick(element) {
   // regenerate all the elements
   currentTags.push(newButtonName.innerText.toLowerCase());
   const s = document.getElementById("searchBar");
-  generateRecipes(s.value.toLowerCase(), currentTags);
+  const myRecipes = filterInput(recipes, s.value);
+  const myTagsFilteredRecipes = filterTags(myRecipes, currentTags);
+  generateRecipes(myTagsFilteredRecipes);
 }
 
 export function filterClose(element) {
@@ -101,7 +105,14 @@ export function filterClose(element) {
   element.parentNode.removeChild(element);
 
   const s = document.getElementById("searchBar");
-  generateRecipes(s.value.toLowerCase(), currentTags);
+
+  const myRecipes = filterInput(recipes, s.value);
+  if (currentTags.length > 0) {
+    const myTagsFilteredRecipes = filterTags(myRecipes, currentTags);
+    generateRecipes(myTagsFilteredRecipes);
+  } else {
+    generateRecipes(myRecipes);
+  }
 }
 
 export let searchingArray = [];
