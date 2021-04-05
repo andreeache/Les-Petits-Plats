@@ -9938,6 +9938,10 @@ body {
   max-width: 90vw;
 }
 
+.logo {
+  height: 93px;
+}
+
 .recipe-card {
   margin-bottom: 40px;
 }
