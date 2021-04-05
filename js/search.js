@@ -3,23 +3,9 @@ export const filterInput = (initialRecipes, text) => {
   const searchFilter = text.toLowerCase();
 
   for (let i = 0; i < initialRecipes.length; i++) {
-    //create recipe card
-    const recipe = initialRecipes[i];
-
-    if (
-      recipe["name"].toLowerCase().includes(searchFilter) ||
-      recipe["description"].toLowerCase().includes(searchFilter)
-    ) {
-      returnValue.push(recipe);
+    if (initialRecipes[i]["searchText"].includes(searchFilter)) {
+      returnValue.push(initialRecipes[i]);
       continue;
-    }
-
-    for (let j = 0; j < recipe["ingredients"].length; j++) {
-      const ingredient = recipe["ingredients"][j];
-      if (ingredient["ingredient"].toLowerCase().includes(searchFilter)) {
-        returnValue.push(recipe);
-        return;
-      }
     }
   }
   return returnValue;

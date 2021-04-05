@@ -64,6 +64,18 @@ $("#ustensils-group").on("hide.bs.dropdown", function () {
 //   });
 // });
 
+const generateExtendedRecipes = () => {
+  for (let i = 0; i < recipes.length; i++) {
+    let searchText = recipes[i]["name"] + " ";
+    searchText += recipes[i]["description"] + " ";
+    for (let j = 0; j < recipes["ingredients"]; j++) {
+      searchText += recipes["ingredients"][j]["ingredient"] + " ";
+    }
+    recipes[i]["searchText"] = searchText.toLowerCase();
+  }
+};
+
+generateExtendedRecipes();
 generateRecipes(recipes, []);
 
 const searchChanged = (s) => {
