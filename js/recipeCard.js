@@ -1,5 +1,4 @@
-import { recipes } from "./recipes.js";
-import { searchingArray, searchable, tagFactory } from "./tagFactory.js";
+import { tagFactory } from "./tagFactory.js";
 
 export const generateRecipes = (recipeList) => {
   const mainSection = document.getElementById("main-section");
@@ -7,8 +6,9 @@ export const generateRecipes = (recipeList) => {
   const devicesDropdown = document.getElementById("devices-dropdown");
   const ustensilsDropdown = document.getElementById("ustensils-dropdown");
 
+  // slert will be used to diplay alert recupe when no recipe matches the search
   let alert = true;
-
+// uses new tagFactory to generate tag dropdown section
   let ingredientsFactory = new tagFactory(
     ingredientsDropdown,
     "ingredients",
@@ -124,7 +124,7 @@ export const generateRecipes = (recipeList) => {
     recipeSteps.innerText = recipe["description"];
     recipeInstructions.appendChild(recipeSteps);
     mySearchText += recipe["description"];
-    searchingArray.push(new searchable(mainCard, mySearchText.toLowerCase()));
+  
 
     ingredientsFactory.addTags(recipe);
     applianceFactory.addTags(recipe);

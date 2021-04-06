@@ -15,7 +15,7 @@ export class tagFactory {
     this.parentDropdown.textContent = "";
     this.myTags = [];
   }
-
+// add tags for each displayed recipe
   addTags(recipe) {
     if (this.secondTag != null) {
       recipe[this.firstTag].forEach((subitem) => {
@@ -31,6 +31,7 @@ export class tagFactory {
   }
 
   generate() {
+    // remove duplicates and sort tags
     let myTagSet = [...new Set(this.myTags)].sort();
 
     for (let i = 0; i < myTagSet.length; i++) {
@@ -46,13 +47,13 @@ export class tagFactory {
       dropdownTag.innerText = myTagSet[i];
       dropdownTag.setAttribute("onclick", "tagClick(this)");
       tag.appendChild(dropdownTag);
-      searchingArray.push(new searchable(tag, myTagSet[i].toLowerCase()));
     }
   }
 }
 
 export let currentTags = [];
 
+// create tag button for selected tag filter
 export function tagClick(element) {
   let filterSection = document.getElementById("filter-section");
 
@@ -115,13 +116,3 @@ export function filterClose(element) {
   }
 }
 
-export let searchingArray = [];
-
-export class searchable {
-  element;
-  text;
-  constructor(element, text) {
-    this.element = element;
-    this.text = text;
-  }
-}

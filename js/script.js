@@ -1,20 +1,12 @@
 import { recipes } from "./recipes.js";
-import {
-  currentTags,
-  tagFactory,
-  tagClick,
-  filterClose,
-  searchingArray,
-  searchable,
-} from "./tagFactory.js";
+import { currentTags, tagClick, filterClose } from "./tagFactory.js";
 import { generateRecipes } from "./recipeCard.js";
 import { filterInput, filterTags } from "./search.js";
 
 window.tagClick = tagClick;
 window.filterClose = filterClose;
 
-const ingredientFilter = document.getElementById("ingredient-filter");
-
+//change search input tags width and placeholder
 $("#ingredient-group").on("show.bs.dropdown", function () {
   $(".filter__group-ingredient").css("width", "50vw");
   $(".filter__group-ingredient-dd").css("width", "50vw");
@@ -58,12 +50,7 @@ $("#ustensils-group").on("hide.bs.dropdown", function () {
   $(".filter__input-ustensils").attr("placeholder", "Ustensils");
 });
 
-// $(function () {
-//   $(".dropdown").on("show.bs.dropdown hide.bs.dropdown", function () {
-//     $(this).find(".caret").toggleClass("caretup");
-//   });
-// });
-
+// creates a stringlist with name, ingredients and description details for each recipe
 const generateExtendedRecipes = () => {
   for (let i = 0; i < recipes.length; i++) {
     let searchText = recipes[i]["name"] + " ";
@@ -76,8 +63,9 @@ const generateExtendedRecipes = () => {
 };
 
 generateExtendedRecipes();
-generateRecipes(recipes, []);
+generateRecipes(recipes);
 
+//filters recipes according to the user's input
 const searchChanged = (s) => {
   if (s.value.length < 3) {
     generateRecipes(recipes);
@@ -94,6 +82,7 @@ const searchChanged = (s) => {
 
 window.searchChanged = searchChanged;
 
+// filters within the tag list
 const tagChanged = (s) => {
   let tags = s.parentNode.getElementsByClassName("col-md-4");
   let toFind = s.value.toLowerCase();
