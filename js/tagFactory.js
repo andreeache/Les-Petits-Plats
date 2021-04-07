@@ -29,7 +29,7 @@ export class tagFactory {
       this.myTags.push(recipe[this.firstTag]);
     }
   }
-
+// generate tags in the dropdown list
   generate() {
     // remove duplicates and sort tags
     let myTagSet = [...new Set(this.myTags)].sort();
@@ -90,7 +90,7 @@ export function tagClick(element) {
 
   filterSection.appendChild(newButton);
 
-  // regenerate all the elements
+  // regenerate all the elements and new search including the current tag
   currentTags.push(newButtonName.innerText.toLowerCase());
   const s = document.getElementById("searchBar");
   const myRecipes = filterInput(recipes, s.value);
@@ -98,6 +98,7 @@ export function tagClick(element) {
   generateRecipes(myTagsFilteredRecipes);
 }
 
+// close tag filter button
 export function filterClose(element) {
   currentTags = currentTags.filter((value, index, array) => {
     // it also contains the (X) at the end of the innerText
@@ -106,7 +107,7 @@ export function filterClose(element) {
   element.parentNode.removeChild(element);
 
   const s = document.getElementById("searchBar");
-
+// after closing the tag, it will generate a new search witth the current values
   const myRecipes = filterInput(recipes, s.value);
   if (currentTags.length > 0) {
     const myTagsFilteredRecipes = filterTags(myRecipes, currentTags);

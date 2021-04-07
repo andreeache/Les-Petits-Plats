@@ -82,7 +82,7 @@ const searchChanged = (s) => {
 
 window.searchChanged = searchChanged;
 
-// filters within the tag list
+// filters within the tag list according to the user input
 const tagChanged = (s) => {
   let tags = s.parentNode.getElementsByClassName("col-md-4");
   let toFind = s.value.toLowerCase();

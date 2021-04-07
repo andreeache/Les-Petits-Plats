@@ -1,4 +1,5 @@
 export const filterInput = (initialRecipes, text) => {
+    // empty array for the recipes that will match the input
   const returnValue = [];
   const searchFilter = text.toLowerCase();
 
@@ -11,6 +12,7 @@ export const filterInput = (initialRecipes, text) => {
   return returnValue;
 };
 
+// filter recipes according to tags from dropdown list
 export const filterTags = (initialRecipes, tags) => {
   const recipesWithoutAllTags = [];
 
@@ -43,11 +45,11 @@ export const filterTags = (initialRecipes, tags) => {
       if (j != recipe["ustensils"].length) {
         continue;
       }
-
+// array with all the recipes that don't match the tags
       recipesWithoutAllTags.push(recipe);
     }
   }
-
+// iterates all the recipes and display the ones that don't belong thr recipesWithoutAllTags
   const returnValue = [];
   for (let i = 0; i < initialRecipes.length; i++) {
     if (!recipesWithoutAllTags.includes(initialRecipes[i])) {

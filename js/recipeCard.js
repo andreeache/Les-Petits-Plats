@@ -6,7 +6,7 @@ export const generateRecipes = (recipeList) => {
   const devicesDropdown = document.getElementById("devices-dropdown");
   const ustensilsDropdown = document.getElementById("ustensils-dropdown");
 
-  // slert will be used to diplay alert recupe when no recipe matches the search
+  // alert will be used to diplay alert recupe when no recipe matches the search
   let alert = true;
 // uses new tagFactory to generate tag dropdown section
   let ingredientsFactory = new tagFactory(
@@ -125,13 +125,14 @@ export const generateRecipes = (recipeList) => {
     recipeInstructions.appendChild(recipeSteps);
     mySearchText += recipe["description"];
   
-
+// add the tags to the right dropdownsection
     ingredientsFactory.addTags(recipe);
     applianceFactory.addTags(recipe);
     ustensilsFactory.addTags(recipe);
 
     alert = false;
   }
+  //creates the html elements for the dropdown tags
   ingredientsFactory.generate();
   applianceFactory.generate();
   ustensilsFactory.generate();
