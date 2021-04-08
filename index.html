@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css" class="ref">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -64,10 +67,8 @@
                 <input type="text" onkeyup="tagChanged(this)"
                     class="form-control bg-success border-0 filter__input filter__input-device text-white"
                     placeholder=" Devices" >
-                <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
-
-                    <!-- <span class="caret"></span> -->
-                </a>
+                    <button class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
+                    aria-expanded="false"></button>
                 <div class="dropdown-menu bg-success border-0 text-white">
                     <div class="container bg-success text-white filter__group-list">
                         <div class="row container" id="devices-dropdown">
@@ -84,10 +85,9 @@
                 <input type="text" onkeyup="tagChanged(this)"
                     class="form-control bg-danger border-0 filter__input filter__input-ustensils text-white"
                      placeholder=" Ustensils">
-                <a href="#" style="text-decoration: none" class="dropdown-toggle text-white" data-toggle="dropdown">
+                     <button class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
+                     aria-expanded="false"></button>
 
-                    <!-- <span class="caret"></span> -->
-                </a>
                 <div class="dropdown-menu border-0 text-white">
                     <div class="container bg-danger text-white filter__group-list">
                         <div class="row container" id="ustensils-dropdown">
