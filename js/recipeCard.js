@@ -1,4 +1,3 @@
-import { recipes } from "./recipes.js";
 import { searchingArray, searchable, tagFactory } from "./tagFactory.js";
 
 export const generateRecipes = (recipeList) => {

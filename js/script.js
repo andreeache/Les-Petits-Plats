@@ -1,19 +1,14 @@
 import { recipes } from "./recipes.js";
 import {
   currentTags,
-  tagFactory,
   tagClick,
-  filterClose,
-  searchingArray,
-  searchable,
+  filterClose
 } from "./tagFactory.js";
 import { generateRecipes } from "./recipeCard.js";
 import { filterInput, filterTags } from "./search.js";
 
 window.tagClick = tagClick;
 window.filterClose = filterClose;
-
-const ingredientFilter = document.getElementById("ingredient-filter");
 
 $("#ingredient-group").on("show.bs.dropdown", function () {
   $(".filter__group-ingredient").css("width", "50vw");
